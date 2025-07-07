@@ -1,0 +1,78 @@
+@keyframes lift-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-lift-up {
+  animation: lift-up 0.5s ease forwards;
+  opacity: 0; /* Mulai dengan opacity 0 */
+}
+/* Tambahkan efek delay untuk setiap elemen */
+.animate-lift-up:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animate-lift-up:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animate-lift-up:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.footer {
+  background-color: #111; /* Very dark background for footer */
+  color: #ffffff;
+  padding: 60px 0;
+  font-size: 15px;
+}
+
+.footer h4 {
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #888; /* Adjusted hover color for monochrome */
+  text-decoration: none;
+}
+
+.footer .social-links a {
+  font-size: 20px;
+  display: inline-block;
+  /*background: #444; /* Darker background for social icons */
+  color: #fff;
+  line-height: 1;
+  padding: 10px 0;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li i {
+  margin-right: 10px;
+  color: #888; /* Adjusted icon color for monochrome */
+}

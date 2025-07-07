@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRODIE STUDIO</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    
+ 
+</head>
+<body>
+    <header>
+    <div class="container">
+        <nav class="navbar">
+        <a href="#" class="logo">BRODIE STUDIO</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#katalog">Katalog</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <div class="mobile-menu" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        </nav>
+    </div>
+    </header>
+
+    <script>
+  // Smooth scroll untuk navigasi
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        // Hitung posisi target dengan offset untuk header
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = targetElement.offsetTop - headerHeight;
+        
+        // Animasi scroll
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Tutup menu mobile jika terbuka
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('active');
+        }
+      }
+    });
+  });
+
+  // Mobile menu toggle
+  // const mobileMenu = document.getElementById('mobile-menu');
+  // const navLinks = document.querySelector('.nav-links');
+  // const navItems = document.querySelectorAll('.nav-links a');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Menutup menu saat link diklik (hanya di mobile)
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('active');
+      }
+    });
+  });
+
+  // Modal untuk gambar size
+  function openModal(imgElement) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+  
+  // const mobileMenu = document.getElementById('mobile-menu');
+  // const navLinks = document.querySelector('.nav-links');
+  // const navItems = document.querySelectorAll('.nav-links a');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
+    });
+  });
+</script>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home"style="background-image: url('img/1.jpg')";>
+        <div class="container">
+            <div class="hero-content">
+                <h1>BRODIE STUDIO</h1>
+                <p>Jasa sablon profesional dengan hasil yang presisi dan tahan lama untuk berbagai jenis bahan dan produk.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>BRODIE STUDIO - Solusi Sablon Profesional</h3>
+                    <p>Berdiri sejak 2020, BRODIE STUDIO telah dipercaya oleh ratusan klien untuk memberikan hasil sablon berkualitas tinggi dengan berbagai teknik dan metode terbaik di industri.</p>
+                    <p>Kami menggunakan teknologi terkini dan material berkualitas untuk memastikan setiap cetakan presisi dan tahan lama, mulai dari sablon kaos, hoodie, tote bag, hingga produk promosi lainnya.</p>
+                    <p>Tim profesional kami siap membantu mewujudkan desain Anda menjadi produk nyata dengan kualitas terbaik dan service yang memuaskan.</p>
+                </div>
+                <div class="about-image">
+                    <img src="img/brodie.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Layanan Kami</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="img/manual.jpg" alt="Kaos yang di sablon manual">
+                    </div>
+                    <div class="service-content">
+                        <h3>Sablon Manual</h3>
+                        <p>Meyediakan Layanan Sablon Manual Seperti, Sablon Rubber, Sablon Plastisol, Sablon High Density, dan lain"</p>
+                        <a href="#contact" class="service-link">Pesan Layanan <i>→</i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="img/digital.jpg" alt="sablon digital">
+                    </div>
+                    <div class="service-content">
+                        <h3>Sablon Digital</h3>
+                        <p>Meyediakan Sablon Digital Sperti Sablon DTG (Direct to Garment), Sablon DTF (Direct Transfer Film).</p>
+                        <a href="#contact" class="service-link">Pesan Layanan <i>→</i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="img/event.jpg" alt="Design baju event">
+                    </div>
+                    <div class="service-content">
+                        <h3>Sablon Event</h3>
+                        <p>Kami Bisa Meyediakan Merchandise Khusus Untuk Event.</p>
+                        <a href="#contact" class="service-link">Pesan Layanan <i>→</i></a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="img/rapih.png" alt="Kualitas jahitan">
+                    </div>
+                    <div class="service-content">
+                        <h3>Sablon Khusus</h3>
+                        <p>Layanan Sablon Khusus Sablon Glow in the Dark, Sablon Reflektif.</p>
+                        <a href="#contact" class="service-link">Pesan Layanan <i>→</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <section class="katalog" id="katalog">
+  <div class="container">
+    <h2 class="section-title">Katalog</h2>
+
+    <h3 class="sub-title">Ukuran Produk</h3>
+    <div class="sizes-grid">
+      <!-- Size 1 -->
+      <div class="size-card">
+        <div class="size-image">
+          <img src="img/BAD GYMBRO 4.png" alt="OVERSIZE" onclick="openModal(this)">
+        </div>
+        <div class="size-content">
+          <h3>OVERSIZE</h3>
+        </div>
+      </div>
+
+      <!-- Size 2 -->
+      <div class="size-card">
+        <div class="size-image">
+          <img src="img/day16 (2).jpg" alt="BASIC T-SHIRT" onclick="openModal(this)">
+        </div>
+        <div class="size-content">
+          <h3>BASIC T-SHIRT</h3>
+        </div>
+      </div>
+
+      <!-- Size 3 -->
+      <div class="size-card">
+        <div class="size-image">
+          <img src="img/day16 (4).jpg" alt="SLIM FIT T-SHIRT" onclick="openModal(this)">
+        </div>
+        <div class="size-content">
+          <h3>SLIM FIT T-SHIRT</h3>
+        </div>
+      </div>
+
+      <!-- Size 4 -->
+      <div class="size-card">
+        <div class="size-image">
+          <img src="img/day16 (5).jpg" alt="KIDS BASIC T-SHIRT" onclick="openModal(this)">
+        </div>
+        <div class="size-content">
+          <h3>KIDS BASIC T-SHIRT</h3>
+        </div>
+      </div>
+
+      <!-- Size 5 -->
+      <div class="size-card">
+        <div class="size-image">
+          <img src="img/day16 (6).jpg" alt="KIDS LONG SLEEVE BASIC T-SHIRT" onclick="openModal(this)">
+        </div>
+        <div class="size-content">
+          <h3>KIDS LONG SLEEVE BASIC T-SHIRT</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="imageModal" class="image-modal" onclick="closeModal()">
+  <span class="image-modal-close" onclick="closeModal()">&times;</span>
+  <img class="image-modal-content" id="modalImage">
+</div>
+
+    <h3 class="sub-title" style="margin-top: 80px;">Pilihan Warna</h3>
+    <div class="warna-grid">
+      
+      <!-- Warna 1 -->
+      <div class="warna-card">
+        <div class="warna-image">
+          <img src="img/warna/1.jpg" alt="Warna Hitam" onclick="openModal(this)">
+        </div>
+      </div>
+
+      <!-- Warna 2 -->
+      <div class="warna-card">
+        <div class="warna-image">
+          <img src="img/warna/2.jpg" alt="Warna Putih" onclick="openModal(this)">
+        </div>
+      </div>
+
+      <!-- Warna 3 -->
+      <div class="warna-card">
+        <div class="warna-image">
+          <img src="img/warna/3.png" alt="Warna Merah" onclick="openModal(this)">
+        </div>
+      </div>
+
+      <!-- Warna 4 -->
+      <div class="warna-card">
+        <div class="warna-image">
+          <img src="img/warna/4.jpg" alt="Warna Navy" onclick="openModal(this)">
+        </div>
+        <div class="warna-content">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-grid">
+
+                <!-- Portfolio 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/1.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Fleksibilitas Tinggi</h3>
+                        <p>Proyek untuk membuat kaos satuan, untuk event kecil, konten TikTok, atau hadiah personal.</p>-->
+                    </div>
+                </div>
+
+                <!-- Portfolio 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/p1.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+
+                <!-- Portfolio 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/2.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+
+                <!-- Portfolio 4 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/p2.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+
+                <!-- Portfolio 5 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/4.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+
+                <!-- Portfolio 6 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/p3.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+                <!-- Portfolio 7 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/6.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+
+                <!-- Portfolio 8 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/p4.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+
+                <!-- Portfolio 9 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/3.jpg">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <!--<h3>Ekspresi Diri yang Bebas</h3>
+                        <p>Kaos satuan adalah sarana berekspresi. Keunikan dan Ekspresi Diri yang lebih luas.</p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="map-section" data-aos="fade-up" data-aos-delay="200">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d493.07907489154843!2d115.1824962!3d-8.6312244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23973ac9ad86f%3A0xd26e50ebf2c07105!2sJasa%20Sablon%20Kaos%20(Screen%20Printing)%20%7C%20BRODIE!5e0!3m2!1sid!2sid!4v1751547042340!5m2!1sid!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- Contact Info Section -->
+<section class="page-section bg-dark text-white py-5"id="contact">
+  <div class="container">
+    <h2 class="section-title">Hubungi Kami</h2>
+    <div class="row text-center">
+      <!-- Address -->
+      <div class="col-md-4 mb-4">
+        <a href="https://maps.app.goo.gl/GnjeEzVyyZbqg3ow7" 
+           target="_blank" class="text-decoration-none text-light">
+          <div class="bg-secondary rounded p-4 h-100 hover-shadow animate-lift-up">
+            <img src="img/icon/map.png" alt="Map Icon" width="40" class="mb-3">
+            <h5 class="text-white">Our Address</h5>
+            <p class="text-light mb-0">
+              Jl. Kebo Iwa Utara Gg. Pipit No.4,<br>Bali, Indonesia
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Hours of Operation -->
+      <div class="col-md-4 mb-4">
+        <div class="bg-secondary rounded p-4 h-100 hover-shadow animate-lift-up">
+          <img src="img/icon/headphone.png" alt="Email Icon" width="40" class="mb-3">
+          <h5 class="text-white">Hours of Operation</h5>
+          <p class="text-light mb-0">
+            <p>Sunday-Fri: 9 AM - 6 PM</p>
+            <p>Saturday: 9 AM - 4 PM</p>
+          </p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-4 mb-4">
+        <a href="https://wa.me/6283114748640" target="_blank" class="text-decoration-none text-light">
+          <div class="bg-secondary rounded p-4 h-100 hover-shadow animate-lift-up">
+            <img src="img/icon/WA.png" alt="Phone Icon" width="40" class="mb-3">
+            <h5 class="text-white">Phone Number</h5>
+            <p class="text-light mb-0">
+              +62 831-1474-8640<br>
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <a href="https://www.instagram.com/brodie.studio?utm_source=ig_web_button_share_sheet&igsh=NTk1c2ZmZnNqaWJ4" target="_blank" class="text-decoration-none text-light">
+          <div class="bg-secondary rounded p-4 h-100 hover-shadow animate-lift-up">
+            <img src="img/icon/instagram.png" alt="Phone Icon" width="40" class="mb-3">
+            <h5 class="text-white">Instagram</h5>
+            <p class="text-light mb-0">
+              @brodie.studio<br>
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">BRODIE STUDIO</a>
+                    <p>Studio sablon profesional yang berkomitmen memberikan hasil terbaik dengan kualitas tinggi dan service yang memuaskan.</p>
+                    <p>© 2020 BRODIE STUDIO. All Rights Reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li>Sablon Kaos</li>
+                        <li>Sablon Hoodie</li>
+                        <li>Sablon Tote Bag</li>
+                        <li>Produk Promosi</li>
+                        <li>Custom Order</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="footer-bottom">
+                <p>BALI, INDONESIA</p>
+            </div>
+        </div>
+    </footer>
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Menutup menu saat link diklik (hanya di mobile)
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('active');
+      }
+    });
+  });
+
+   function openModal(imgElement) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+</script>
+
+
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
+
